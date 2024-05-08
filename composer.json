@@ -1,14 +1,14 @@
 {
-    "name": "tron/package-postgres-schema",
+    "name": "bearcodi/laravel-postgresql-schemas",
     "autoload": {
         "psr-4": {
-            "Tron\\PackagePostgresSchema\\": "src/"
+            "Bearcodi\\Laravel\\PostgreSQLSchemas\\": "src/"
         }
     },
     "authors": [
         {
             "name": "Mark Babic",
-            "email": "mark.babic@wheelsmedia.com.au"
+            "email": "mark@bearcodi.com"
         }
     ],
     "require-dev": {
