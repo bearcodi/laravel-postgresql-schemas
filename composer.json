@@ -1,0 +1,44 @@
+{
+    "name": "tron/package-postgres-schema",
+    "autoload": {
+        "psr-4": {
+            "Tron\\PackagePostgresSchema\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mark Babic",
+            "email": "mark.babic@wheelsmedia.com.au"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "nunomaduro/collision": "^7.8",
+        "laravel/pint": "^1.15"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/",
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "lint": [
+            "@php vendor/bin/phpstan analyse"
+        ]
+    }
+}
