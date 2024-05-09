@@ -10,6 +10,6 @@ class HelpersTest extends TestCase
     {
         $schemas = db_list_schemas();
 
-        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $schemas);        
+        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $schemas);
     }
 }
