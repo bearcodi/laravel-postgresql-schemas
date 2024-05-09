@@ -3,7 +3,10 @@
     "autoload": {
         "psr-4": {
             "Bearcodi\\Laravel\\PostgreSQLSchemas\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
@@ -53,5 +56,9 @@
                 "Bearcodi\\Laravel\\PostgreSQLSchemas\\PostgreSQLSchemasServiceProvider"
             ]
         }
+    },
+    "require": {
+        "illuminate/support": "*",
+        "illuminate/database": "*"
     }
 }
