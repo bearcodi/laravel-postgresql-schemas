@@ -16,11 +16,11 @@ if (! function_exists('db_supports_schemas')) {
 if (! function_exists('db_list_schemas')) {
     function db_list_schemas(): Collection
     {
-        $schemaPrefix = config('schemas.prefix', '');
+        $schemaPrefix = config('schemas.prefix');
 
         $schemas = config('postgres-schemas.schemas', []);
 
-        return Collection::make($schemas)->map(fn ($schema) => "{$schemaPrefix}_$schema");
+        return Collection::make($schemas)->map(fn ($schema) => join('_', array_filter([$schemaPrefix, $schema])));
     }
 }
 
