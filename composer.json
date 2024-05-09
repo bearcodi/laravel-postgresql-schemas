@@ -46,5 +46,12 @@
         "test": [
             "@php vendor/bin/testbench package:test"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bearcodi\\Laravel\\PostgreSQLSchemas\\PostgreSQLSchemasServiceProvider"
+            ]
+        }
     }
 }
