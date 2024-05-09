@@ -39,6 +39,12 @@
         ],
         "lint": [
             "@php vendor/bin/phpstan analyse"
+        ],
+        "pint": [
+            "@php vendor/bin/pint"
+        ],
+        "test": [
+            "@php vendor/bin/testbench package:test"
         ]
     }
 }
