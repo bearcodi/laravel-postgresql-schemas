@@ -37,3 +37,10 @@ $ composer require bearcodi/laravel-postgresql-schemas
 ```bash
 $ php artisan config:publish --vendor=bearcodi
 ```
+
+## Environment Variables
+
+| Variable              | Default | Description                                                      |
+| :-------------------- | :------ | :--------------------------------------------------------------- |
+| `DB_SCHEMA_PREFIX`    | ''      | Prefix for your environments schemas.                            |
+| `DB_SCHEMA_FORCEDROP` | `true`  | Implements PostgreSQL `CASCADE` or `RESTRICT` on drop of schema. |

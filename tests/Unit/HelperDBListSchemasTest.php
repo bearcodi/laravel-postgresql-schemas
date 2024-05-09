@@ -8,26 +8,11 @@ use Tests\TestCase;
 
 class HelperDBListSchemasTest extends TestCase
 {
-    public function test_it_lists_schemas_without_env_prefix()
+    public function test_it_lists_schemas_without_prefix()
     {
         $expectedSchemas = ['donkey', 'kong'];
 
         Config::set('postgres-schemas.prefix', '');
-        Config::set('postgres-schemas.schemas', $expectedSchemas);
-
-        $schemas = db_list_schemas();
-
-        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $schemas);
-
-        $this->assertEquals($schemas->all(), $expectedSchemas);
-    }
-
-    public function test_it_list_schemas_without_prefix_if_explicitly_disabled()
-    {
-        $expectedSchemas = ['donkey', 'kong'];
-
-        Config::set('postgres-schemas.prefix', 'test');
-        Config::set('postgres-schemas.autoprefix', false);
         Config::set('postgres-schemas.schemas', $expectedSchemas);
 
         $schemas = db_list_schemas();

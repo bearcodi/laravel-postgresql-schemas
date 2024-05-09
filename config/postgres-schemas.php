@@ -7,11 +7,6 @@ return [
     'prefix' => env('DB_SCHEMA_PREFIX', ''),
 
     /**
-     * Enable auto prefixing for your environment.
-     */
-    'autoprefix' => env('DB_SCHEMA_PREFIX_ENABLED', true),
-
-    /**
      * Schemas list to create as part of migrations.
      */
     'schemas' => [
@@ -23,7 +18,7 @@ return [
      *
      * @see Postgres manual reference. 'CASCADE' : 'RESTRICT'
      */
-    'delete_schema_contents_on_drop' => true,
+    'delete_schema_contents_on_drop' => env('DB_SCHEMA_FORCEDROP', true),
 
     /**
      * Force use Schemas irespective of datbase driver.
