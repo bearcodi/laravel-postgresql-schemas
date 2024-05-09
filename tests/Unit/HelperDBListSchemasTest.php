@@ -28,7 +28,7 @@ class HelperDBListSchemasTest extends TestCase
         $expectedSchemas = ['test_donkey', 'test_kong'];
 
         Config::set('postgres-schemas.prefix', $prefix);
-        Config::set('postgres-schemas.schemas', Collection::make($expectedSchemas)->map(fn($schema) => str_replace("{$prefix}_", "", $schema)));
+        Config::set('postgres-schemas.schemas', Collection::make($expectedSchemas)->map(fn ($schema) => str_replace("{$prefix}_", '', $schema)));
 
         $schemas = db_list_schemas();
 
@@ -36,5 +36,4 @@ class HelperDBListSchemasTest extends TestCase
 
         $this->assertEquals($schemas->all(), $expectedSchemas);
     }
-
 }

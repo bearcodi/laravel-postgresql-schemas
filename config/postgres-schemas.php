@@ -13,6 +13,9 @@ return [
         'content',
     ],
 
+    'supported' => [
+        'pgsql',
+    ],
     /**
      * Force remove schema contents on drop.
      *

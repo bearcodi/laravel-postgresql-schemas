@@ -7,7 +7,7 @@ if (! function_exists('db_supports_schemas')) {
     {
         $connection = config('database.connections')[$driver] ?? null;
 
-        $supportedDrivers = config('postgres-schemas.supported', ['pgsql']);
+        $supportedDrivers = config('postgres-schemas.supported', []);
 
         return config('schemas.force', false) || in_array($connection ? $connection['driver'] : config('database.default'), $supportedDrivers, true);
     }
@@ -20,7 +20,7 @@ if (! function_exists('db_list_schemas')) {
 
         $schemas = config('postgres-schemas.schemas', []);
 
-        return Collection::make($schemas)->map(fn ($schema) => join('_', array_filter([$schemaPrefix, $schema])));
+        return Collection::make($schemas)->map(fn ($schema) => implode('_', array_filter([$schemaPrefix, $schema])));
     }
 }
 
