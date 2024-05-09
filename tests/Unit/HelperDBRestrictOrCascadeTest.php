@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Illuminate\Support\Facades\Config;
 use Tests\TestCase;
 
-class   HelperDBRestrictOrCascadeTest extends TestCase
+class HelperDBRestrictOrCascadeTest extends TestCase
 {
     public function test_it_returns_cascade_when_schema_contents_on_drop_is_true()
     {
