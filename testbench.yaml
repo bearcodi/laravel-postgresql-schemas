@@ -1,21 +1,23 @@
 providers:
-  # - Workbench\App\Providers\WorkbenchServiceProvider
+    - Bearcodi\Laravel\PostgreSQLSchemas\PostgreSQLSchemasServiceProvider
+    - Workbench\App\Providers\WorkbenchServiceProvider
 
 migrations:
-  - workbench/database/migrations
+    - database/migrations
+    - workbench/database/migrations
 
 seeders:
-  - Workbench\Database\Seeders\DatabaseSeeder
+    - Workbench\Database\Seeders\DatabaseSeeder
 
 workbench:
-  start: '/'
-  install: true
-  discovers:
-    web: true
-    api: false
-    commands: false
-    components: false
-    views: false
-  build: []
-  assets: []
-  sync: []
+    start: '/'
+    install: true
+    discovers:
+        web: true
+        api: false
+        commands: false
+        components: false
+        views: false
+    build: []
+    assets: []
+    sync: []
