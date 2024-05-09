@@ -4,12 +4,12 @@ return [
     /**
      * Prefix for your environments schemas.
      */
-    'prefix' => env('APP_ENV', ''),
+    'prefix' => env('DB_SCHEMA_PREFIX', ''),
 
     /**
      * Enable auto prefixing for your environment.
      */
-    'autoprefix' => true,
+    'autoprefix' => env('DB_SCHEMA_PREFIX_ENABLED', true),
 
     /**
      * Schemas list to create as part of migrations.

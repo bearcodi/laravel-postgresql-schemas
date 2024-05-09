@@ -16,7 +16,7 @@ if (! function_exists('db_supports_schemas')) {
 if (! function_exists('db_list_schemas')) {
     function db_list_schemas(): Collection
     {
-        $schemaPrefix = config('schemas.prefix');
+        $schemaPrefix = config('postgres-schemas.autoprefix', false) ? config('postgres-schemas.prefix', '') : '';
 
         $schemas = config('postgres-schemas.schemas', []);
 
